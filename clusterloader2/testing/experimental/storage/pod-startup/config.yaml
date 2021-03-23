@@ -15,7 +15,7 @@
   {{$GATHER_METRICS := DefaultParam .GATHER_METRICS true}}
   {{$START_PODS := DefaultParam .START_PODS true}}
   {{$PROVISION_VOLUME := DefaultParam .PROVISION_VOLUME false}}
-  {{$STORAGE_CLASS := DefaultParam .STORAGE_CLASS "csi-gce-pd"}}
+  {{$STORAGE_CLASS := DefaultParam .STORAGE_CLASS "ebs-sc"}}
   # Shortcut for provisioning volumes with some external provisioner. Without it,
   # the PV controller must update each PVC before the external provisioner
   # starts to work on it, which limits the volume creation rate.
@@ -30,7 +30,7 @@
   # the value of the expected provisioner can be set here and then only
   # PVs with that annotation will be counted.
   {{$EXPECTED_PROVISIONER := DefaultParam .EXPECTED_PROVISIONER ""}}
-  {{$VOL_SIZE := DefaultParam .VOL_SIZE "8Gi"}}
+  {{$VOL_SIZE := DefaultParam .VOL_SIZE "4Gi"}}
   {{$WAIT_FOR_PVS_CREATED := DefaultParam .WAIT_FOR_PVS_CREATED false}}
   {{$WAIT_FOR_PVS_BOUND := DefaultParam .WAIT_FOR_PVS_BOUND false}}
   {{$WAIT_FOR_PVS_DELETED := DefaultParam .WAIT_FOR_PVS_DELETED false}}
